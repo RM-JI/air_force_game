@@ -18,6 +18,9 @@ background = pygame.transform.scale(background, (width, height))
 player_speed = 0.5
 bullets=[]
 bullet = pygame.image.load("bullet.jpg")
+bulletPos[0]=bulletPos[0]+1
+screen.blit(bullet,bulletPos)
+index = 0
 # 1.4 - use loep the op to kegame running 
 key_up=key_down=key_left=key_right = False
 player_pos=[130,100]
@@ -65,10 +68,16 @@ while keep_going:
         if key_left:
             player_pos[0]-=player_speed
     if (player_pos[0] <= width-150):
-       if key_right:
+       if key_right:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
             player_pos[0]+=player_speed
     if event.type==pygame.MOUSEBUTTONDOWN or (event.type==pygame.KEYDOWN and event.key==pygame.K_SPACE):
-        bullets.append([player_pos[0],player_pos[1]])
+        bullets.append(player_pos[0])
+        bullets.append(player_pos[1])
+    
+    if 
+        if bulletPos[0]<-64 or bulletPos[0]>640 or bulletPos[1]<-64 or bulletPos[1]>480:
+            bullets.pop(index)  #remove from list
+            index =+ 1
 #1.9 exit pygame and python
 pygame.quit()
-exit(0) 
+exit(0)
